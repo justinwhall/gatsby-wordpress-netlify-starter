@@ -32,7 +32,8 @@ module.exports = {
         useACF: false,
         auth: {},
         // Set to true to debug endpoints on 'gatsby build'
-        verboseOutput: true
+        verboseOutput: true,
+        excludedRoutes: ["/*/*/comments", "/yoast/**", "/*/*/users", "/*/users/me", "/oembed/*"]
       }
     },
     {
