@@ -55,9 +55,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     id
                     slug
                     modified
-                    tags {
-                      name
-                    }
                     categories {
                       name
                     }
@@ -71,7 +68,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             console.log(result.errors)
             reject(result.errors)
           }
-          const tags = []
+
           const categories = []
           const postTemplate = path.resolve(`./src/templates/post.jsx`)
           // We want to create a detailed page for each
@@ -79,12 +76,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           // The Post ID is prefixed with 'POST_'
 
           _.each(result.data.allWordpressPost.edges, edge => {
-            console.log(edge);
+            // console.log(edge);
 
             // grab all the tags and categories for later use
-            edge.node.tags.forEach(tag => {
-              tags.push(tag.name)
-            })
             edge.node.categories.forEach(category => {
               categories.push(category.name)
             })
@@ -99,22 +93,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           })
           // ==== END POSTS ====
 
-          // Create pages for each unique tag and category
-          const tagsTemplate = path.resolve(`./src/templates/tag.jsx`)
+          // Create pages for each unique category
+
           const categoriesTemplate = path.resolve(
             `./src/templates/category.jsx`
           )
-          const tagsSet = new Set(tags)
+
           const catSet = new Set(categories)
-          tagsSet.forEach(tag => {
-            createPage({
-              path: `/tags/${_.kebabCase(tag)}/`,
-              component: slash(tagsTemplate),
-              context: {
-                id: tag
-              }
-            })
-          })
 
           catSet.forEach(cat => {
             createPage({

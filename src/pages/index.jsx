@@ -78,9 +78,6 @@ export const pageQuery = graphql`
           categories {
             name
           }
-          tags {
-            name
-          }
           content
         }
       }
