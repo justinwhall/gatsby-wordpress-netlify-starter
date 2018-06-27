@@ -4,10 +4,6 @@ const path = require(`path`)
 const slash = require(`slash`)
 const webpackLodashPlugin = require('lodash-webpack-plugin')
 
-console.log("=========DEPLOY_ENV=============");
-console.log(DEPLOY_ENV);
-console.log("======================");
-
 console.log("===========process.env.DEPLOY_ENV===========");
 console.log(process.env.DEPLOY_ENV);
 console.log("======================");
