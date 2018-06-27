@@ -4,6 +4,38 @@ const path = require(`path`)
 const slash = require(`slash`)
 const webpackLodashPlugin = require('lodash-webpack-plugin')
 
+console.log("=========DEPLOY_ENV=============");
+console.log(DEPLOY_ENV);
+console.log("======================");
+
+console.log("===========process.env.DEPLOY_ENV===========");
+console.log(process.env.DEPLOY_ENV);
+console.log("======================");
+
+
+/**
+ * Generate node edges
+ *
+ * @param {any} { node, boundActionCreators, getNode }
+ */
+exports.onCreateNode = ({ node, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators;
+
+  if (!Object.prototype.hasOwnProperty.call(node, 'meta')) {
+    return;
+  }
+
+  let deploy;
+
+  if (node.meta[DEPLOY_ENV]) {
+    deploy = true;
+  } else {
+    deploy = false;
+  }
+
+  createNodeField({ node, name: 'deploy', value: deploy });
+};
+
 // Will create pages for Wordpress pages (route : /{slug})
 // Will create pages for Wordpress posts (route : /{slug})
 
@@ -58,6 +90,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     categories {
                       name
                     }
+                    fields {
+                      deploy
+                    }
                   }
                 }
               }
@@ -76,7 +111,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           // The Post ID is prefixed with 'POST_'
 
           _.each(result.data.allWordpressPost.edges, edge => {
-            // console.log(edge);
 
             // grab all the tags and categories for later use
             edge.node.categories.forEach(category => {
@@ -87,7 +121,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               path: `/${edge.node.slug}`,
               component: slash(postTemplate),
               context: {
-                id: edge.node.id
+                id: edge.node.id,
               }
             })
           })

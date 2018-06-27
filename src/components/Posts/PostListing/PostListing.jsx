@@ -25,15 +25,6 @@ class PostListing extends React.Component {
         postList.map(post => (
           <PostListContainer>
             <Link className="post-link" to={post.path} key={post.title}>
-              {post.featuredImageUrl !== '' ? (
-                <img
-                  className="featured-image"
-                  src={post.featuredImageUrl}
-                  alt=""
-                />
-              ) : (
-                <div />
-              )}
               <h3>{post.title}</h3>
               <h5>
                 {post.date} in {post.mainCategory} by {post.authorName}

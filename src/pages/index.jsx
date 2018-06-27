@@ -9,7 +9,7 @@ import TopNavigation from '../components/Layout/Navigation/Navigation'
 class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allWordpressPost.edges
-
+    console.log(postEdges);
     return (
       <HomeContainer>
         <Helmet title={config.siteTitle} />
