@@ -9,6 +9,7 @@ export default class CategoryTemplate extends React.Component {
   render() {
     const category = this.props.pathContext.id
     const postEdges = this.props.data.allWordpressPost.edges
+    console.log(this);
     return (
       <div className="tag-container">
         <Helmet title={`Posts tagged as "${category}" | ${config.siteTitle}`} />
@@ -43,39 +44,47 @@ const MainContentContainer = styled.main`
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CategoryPage {
-    allWordpressPost {
-      edges {
-        node {
-          author {
-            name
-            avatar_urls {
-              wordpress_24
-              wordpress_48
-              wordpress_96
-            }
-          }
-          date
-          slug
-          title
-          modified
-          excerpt
-          id
-          categories {
-            name
-          }
-          content
+query category($id: String){
+  allWordpressPost(
+    filter: {
+      categories: {
+        name: {
+          eq: $id
         }
       }
     }
-    allWordpressPage {
-      edges {
-        node {
-          slug
-          title
-          id
+  ) {
+    edges {
+      node {
+        author {
+          name
+          avatar_urls {
+            wordpress_24
+            wordpress_48
+            wordpress_96
+          }
         }
+        date
+        slug
+        title
+        modified
+        excerpt
+        id
+        categories {
+          name
+        }
+        content
       }
     }
   }
+  allWordpressPage {
+    edges {
+      node {
+        slug
+        title
+        id
+      }
+    }
+  }
+}
 `

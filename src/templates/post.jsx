@@ -34,7 +34,7 @@ export default class PostTemplate extends React.Component {
               <h5>
                 <Link
                   className="cat-link"
-                  to={`catgory/${postNode.categories[0].name}`}
+                  to={`catgories/${postNode.categories[0].name}`}
                 >
                   {postNode.categories[0].name}{' '}
                 </Link>
