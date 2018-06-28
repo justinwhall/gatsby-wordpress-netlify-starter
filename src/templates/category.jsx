@@ -52,6 +52,9 @@ query category($id: String){
           eq: $id
         }
       }
+      fields: {
+        deploy: {eq: true}
+      }
     }
   ) {
     edges {

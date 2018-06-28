@@ -15,7 +15,7 @@ class Index extends React.Component {
         <SEO postEdges={postEdges} />
         <TopNavigation pages={this.props.data.allWordpressPage} />
         <MainContentContainer>
-          <h1>Gatsby + Wordpress + Netlifly</h1>
+          <h1>Gatsby + WordPress + Netlifly</h1>
           <p style={{ textAlign: 'center' }}>
             Created by{' '}
             <a
