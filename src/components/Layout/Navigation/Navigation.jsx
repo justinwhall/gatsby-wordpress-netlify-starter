@@ -7,7 +7,7 @@ import Logo from '../../Accessories/Logo'
 class TopNavigation extends Component {
   buildPageNodes() {
     const { pages } = this.props
-    let pageNodes = []
+    const pageNodes = []
 
     pages.edges.forEach(page => {
       pageNodes.push({
@@ -50,7 +50,7 @@ const NavigationContainer = styled.div`
   width: 100%;
   margin: auto;
   padding: 10px 100px;
-  background: #9d7cbf;
+  background: #93cef5;
 `
 
 const TitleSection = styled.div`

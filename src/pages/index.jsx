@@ -9,21 +9,27 @@ import TopNavigation from '../components/Layout/Navigation/Navigation'
 class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allWordpressPost.edges
-    console.log(postEdges);
     return (
       <HomeContainer>
         <Helmet title={config.siteTitle} />
         <SEO postEdges={postEdges} />
         <TopNavigation pages={this.props.data.allWordpressPage} />
         <MainContentContainer>
-          <h1>Gatsby + Wordpress Blog</h1>
+          <h1>Gatsby + Wordpress + Netlifly</h1>
           <p style={{ textAlign: 'center' }}>
-            Created by Eric Windmill.{' '}
+            Created by{' '}
             <a
               style={{ fontSize: '1.6rem' }}
-              href="https://twitter.com/ericwindmill"
+              href="https://www.justinwhall.com"
             >
-              You should follow him on Twitter
+            Justin W. Hall
+            </a>.
+            {' '}You should follow him on{' '}
+            <a
+              style={{ fontSize: '1.6rem' }}
+              href="https://twitter.com/justinwhall"
+            >
+              Twitter.
             </a>
           </p>
           <Divider />

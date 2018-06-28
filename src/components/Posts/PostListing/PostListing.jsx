@@ -46,7 +46,7 @@ const PostListContainer = styled.div`
   h3:before {
     content: '';
     width: 50px;
-    background-color: #9d7cbf;
+    background-color: #93cef5;
     height: 6px;
     position: absolute;
     top: 0;

@@ -129,7 +129,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
           catSet.forEach(cat => {
             createPage({
-              path: `/categories/${_.kebabCase(cat)}/`,
+              path: `/category/${_.kebabCase(cat)}/`,
               component: slash(categoriesTemplate),
               context: {
                 id: cat

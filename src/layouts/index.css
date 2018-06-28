@@ -149,13 +149,13 @@ ul {
 a {
   text-decoration: none;
   transition: all 300ms ease;
-  background: rgba(157, 124, 191, 0.2);
+  background: rgba(144, 211, 241, 0.2);
   padding: 3px;
 }
 
 a:hover {
   color: black;
-  background: rgba(157, 124, 191, 0.4);
+  background: rgba(132, 177, 219, 0.521);
 }
 
 @media screen and (max-width: 768px) {
