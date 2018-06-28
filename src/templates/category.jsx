@@ -7,6 +7,7 @@ import PostListing from '../components/Posts/PostListing/PostListing'
 
 export default class CategoryTemplate extends React.Component {
   render() {
+    return null;
     const category = this.props.pathContext.id
     const postEdges = this.props.data.allWordpressPost.edges
     return (
@@ -50,9 +51,6 @@ query category($id: String){
         name: {
           eq: $id
         }
-      }
-      fields: {
-        deploy: {eq: true}
       }
     }
   ) {
