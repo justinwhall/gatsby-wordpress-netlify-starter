@@ -2,11 +2,17 @@
     <img src="static/logos/logo-1024.png" alt="Logo" width='100px' height='100px'/>
 </div>
 
-# Gatsby WordPress Starter
+# Gatsby + WordPress + Netlifly Starter
 
-A starter skeleton that leveraged the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/).
+A starter skeleton that leveraged the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlifly. Publishing posts call the Netlifly build hook. Deploy to Netlifly stage or production enviroment when updating a WordPress post or page.
 
-#### This Project was forked from [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter)
+## Dependencies
+
+* [LittleBot Netlifly](https://github.com/justinwhall/littlebot-netlify) installed and activated on the source WordPress installation.
+
+#### This Project was forked from [Gatsby WordPress Starter](https://github.com/ericwindmill/gatsby-starter-wordpress)
+
+#### Which was forked from [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter)
 
 ### [Demo](https://gatsby-wordpress-starter.netlify.com/)
 

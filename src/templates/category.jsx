@@ -9,7 +9,6 @@ export default class CategoryTemplate extends React.Component {
   render() {
     const category = this.props.pathContext.id
     const postEdges = this.props.data.allWordpressPost.edges
-    console.log(this);
     return (
       <div className="tag-container">
         <Helmet title={`Posts tagged as "${category}" | ${config.siteTitle}`} />
