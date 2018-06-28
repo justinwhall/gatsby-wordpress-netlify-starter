@@ -81,6 +81,9 @@ export const pageQuery = graphql`
           modified
           excerpt
           id
+          author {
+            name
+          }
           categories {
             name
           }

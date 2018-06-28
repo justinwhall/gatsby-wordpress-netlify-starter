@@ -4,7 +4,8 @@ import Link from 'gatsby-link'
 
 class PostListing extends React.Component {
   getPostList() {
-    const postList = []
+    const postList = [];
+    console.log(this.props)
     this.props.postEdges.forEach(postEdge => {
       postList.push({
         path: `/${postEdge.node.slug}`,
@@ -12,9 +13,10 @@ class PostListing extends React.Component {
         title: postEdge.node.title,
         excerpt: postEdge.node.excerpt,
         mainCategory: postEdge.node.categories[0].name,
+        authorName: postEdge.node.author.name,
       })
     })
-    return postList
+    return postList;
   }
 
   render() {
