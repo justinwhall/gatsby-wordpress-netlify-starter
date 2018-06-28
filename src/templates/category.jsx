@@ -7,6 +7,7 @@ import PostListing from '../components/Posts/PostListing/PostListing'
 
 export default class CategoryTemplate extends React.Component {
   render() {
+    console.log(this)
     const category = this.props.pathContext.id
     const postEdges = this.props.data.allWordpressPost.edges
     return (
@@ -43,8 +44,16 @@ const MainContentContainer = styled.main`
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-query category {
-  allWordpressPost {
+query category($id: String) {
+  allWordpressPost (
+    filter: {
+      categories: {
+        name: {
+          eq: $id
+        }
+      }
+    }
+  ) {
     edges {
       node {
         author {
