@@ -28,7 +28,7 @@ class wpPage extends Component {
 export default wpPage
 
 const MainContentContainer = styled.main`
-  width: 600px;
+  max-width: 800px;
   margin: 50px auto;
 
   h1 {
