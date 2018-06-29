@@ -28,7 +28,7 @@ module.exports = {
         // WP.com sites set to true, WP.org set to false
         hostingWPCOM: false,
         // The protocol. This can be http or https.
-        protocol: 'http',
+        protocol: 'https',
         // Use 'Advanced Custom Fields' Wordpress plugin
         useACF: false,
         auth: {},
