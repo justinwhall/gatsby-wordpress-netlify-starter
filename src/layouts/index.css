@@ -146,6 +146,11 @@ ul {
   list-style: none;
 }
 
+ul,
+ol {
+  padding-left: 17px;
+}
+
 a {
   text-decoration: none;
   transition: all 300ms ease;
