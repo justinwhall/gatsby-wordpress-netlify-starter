@@ -4,7 +4,7 @@
 
 # Gatsby + WordPress + Netlifly Starter
 
-A starter skeleton that leveraged the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlifly. Publishing posts call the Netlifly build hook. Deploy to Netlifly stage or production enviroment when updating a WordPress post or page.
+A starter skeleton that leverages the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlifly. Publishing posts call the Netlifly build hook. Deploy to Netlifly stage or production enviroment when updating a WordPress post or page.
 
 ## Dependencies
 
@@ -14,7 +14,8 @@ A starter skeleton that leveraged the WordPress API for [Gatsby](https://github.
 
 #### Which was forked from [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter)
 
-### [Demo](https://gatsby-wordpress-starter.netlify.com/)
+### [Production Demo](https://gatsby-wordpress-netlifly-production.netlify.com/)
+### [Stage Demo](https://gatsby-wordpress-netlifly-stage.netlify.com/)
 
 ## Features
 
