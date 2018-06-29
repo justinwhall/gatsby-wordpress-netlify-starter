@@ -2,7 +2,7 @@
     <img src="static/logos/logo-1024.png" alt="Logo" width='100px' height='100px'/>
 </div>
 
-# Gatsby + WordPress + Netlifly Starter
+# Gatsby + Headless WordPress + Netlifly Starter
 
 A starter skeleton that leverages the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlifly. Publishing posts call the Netlifly build hook. Deploy to Netlifly stage or production enviroment when updating a WordPress post or page.
 
