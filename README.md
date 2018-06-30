@@ -124,12 +124,9 @@ If you update or publish a post with an environment checked, your post will be p
   * gh-pages for deploying to GitHub pages
   * CodeClimate configuration file and badge
 
-### Instructions:
+### Example:
 
-Using this starter requires:
-
-* A Wordpress acct.
-* Configuring the gatsby-config.js file. You really only need to change BaseUrl, and hostingWPCOM if you're using WP.com rather than WP.org
+Using this starter requires configuring the gatsby-config.js file. You really only need to change BaseUrl, and hostingWPCOM if you're using WP.com rather than WP.org
 
 ```javascript
 {
