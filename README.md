@@ -55,10 +55,12 @@ Visit any post or page and you'll see that the default "Publish" metabox has bee
 
 <img src="https://gatsbynetliflydemo.justinwhall.com/wp-content/uploads/2018/06/Screenshot-2018-06-29-18.50.37_preview-300x180.png" alt="publish"  />
 
+If you update or publish a post with an environment checked, your post will be published to that environment. Likewise, if you update/publish with an environment unchecked, A post will be removed from that environment. For example, if you uncheck both environments and update, the post will be removed from both. If you publish/update with both environments checked, the post will be published to both.
+
 ## Features
 
 <div align="center">
-    <img src="http://res.cloudinary.com/ericwindmill/image/upload/v1517695916/Screen_Shot_2018-02-03_at_2.09.53_PM_ja7idb.png" alt="Logo" width='800px' />
+    <img src="https://gatsbynetliflydemo.justinwhall.com/wp-content/uploads/2018/06/Screenshot-2018-06-29-19.11.58_preview.png" alt="Logo" />
 </div>
 
 ### New Features
@@ -121,14 +123,6 @@ Visit any post or page and you'll see that the default "Publish" metabox has bee
   * write-good for linting English prose
   * gh-pages for deploying to GitHub pages
   * CodeClimate configuration file and badge
-
----
-
-<div align="center">
-    <img src="http://res.cloudinary.com/ericwindmill/image/upload/v1517695916/Screen_Shot_2018-02-03_at_2.10.06_PM_lbntvz.png" alt="Logo" width='800px' />
-</div>
-
----
 
 ### Instructions:
 
