@@ -17,6 +17,44 @@ A starter skeleton that leverages the WordPress API for [Gatsby](https://github.
 ### [Production Demo](https://gatsby-wordpress-netlifly-production.netlify.com/)
 ### [Stage Demo](https://gatsby-wordpress-netlifly-stage.netlify.com/)
 
+## Getting Started
+1. Fork Gatsby WordPress Netlifly
+2. Clone your forked repository
+3. `npm install --global gatsby-cli` (if you don't have Gatsby CLI installed)
+4. In the root of your project yarn install
+5. Open your `gatsby-config.js` file and change the baseUrl to your WordPress url
+6. Run `yarn develop` -- _not_ `gatsby develop`
+
+#### Netlifly
+_Signup for a Netlifly account if you don't already have one._
+
+1. Create a new site
+2. Select "GitHub" from "Continuous Deployment"
+3. Search and select your repository
+4. Click "show advanced"
+5. Click "new variable"
+6. Add a deploy key DEPLOY_ENV with a value of lbn_deploy_stage
+7. Click "deploy site"
+8. Under Settings > Build & Deploy click "add build hook"
+9. Name something that signifies environment (stage or production)
+10. (Optional) Click "site options" and then "change site name". Rename to something that signifies this is the environment (stage or production).
+11. Repeat the process above a second time to create a production environment. Change the DEPLOY_ENV to lbn_deploy_production Optionally rename accordingly.
+
+#### Install WordPress
+Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [https://gatsbynetliflydemo.justinwhall.com/](https://gatsbynetliflydemo.justinwhall.com/) for its data source. which is no more than a stripped down _s theme.
+
+#### Install LittleBot Netlifly plugin
+
+1. Download or clone the [LittleBot Netlifly plugin](https://github.com/justinwhall/littlebot-netlify) and install on your source WordPress site.
+2. Find your build hooks on Netlifly **Settings > Build & Deploy**
+3. Add build hooks to your WordPress install under **WP Admin > Settings > LittleBot Netlifly** 
+
+#### Publish!
+
+Visit any post or page and you'll see that the default "Publish" metabox has been replaced with:
+
+<img src="https://gatsbynetliflydemo.justinwhall.com/wp-content/uploads/2018/06/Screenshot-2018-06-29-18.50.37_preview-300x180.png" alt="publish"  />
+
 ## Features
 
 <div align="center">
