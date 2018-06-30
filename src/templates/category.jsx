@@ -23,7 +23,7 @@ export default class CategoryTemplate extends React.Component {
   }
 }
 const MainContentContainer = styled.main`
-  width: 600px;
+  max-width: 600px;
   margin: 50px auto;
 
   h1 {

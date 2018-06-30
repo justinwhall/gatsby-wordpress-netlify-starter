@@ -95,10 +95,13 @@ h3,
 h4,
 h5,
 h6,
-p,
-li,
 a {
   color: #0f1523;
+}
+
+p,
+li {
+  color: #666;
 }
 
 h1,
@@ -136,9 +139,11 @@ h6 {
 }
 
 p,
-li {
-  font-size: 1.4rem;
-  line-height: 1.6;
+li,
+div,
+em {
+  font-size: 1.6rem;
+  line-height: 1.7;
   font-weight: 400;
 }
 
@@ -146,14 +151,14 @@ ul {
   list-style: none;
 }
 
-ul,
-ol {
-  padding-left: 17px;
+main {
+  padding: 0 10px;
 }
 
 main ol,
 main ul {
   margin-bottom: 30px;
+  padding-left: 17px;
 }
 
 a {
@@ -161,6 +166,7 @@ a {
   transition: all 300ms ease;
   background: rgba(144, 211, 241, 0.2);
   padding: 3px;
+  font-size: .9em;
 }
 
 a:hover {

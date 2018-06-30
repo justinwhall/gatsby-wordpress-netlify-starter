@@ -51,6 +51,10 @@ const NavigationContainer = styled.div`
   margin: auto;
   padding: 10px 100px;
   background: #93cef5;
+
+  @media (max-width: 900px) {
+    display: block;
+  }
 `
 
 const TitleSection = styled.div`
@@ -70,12 +74,16 @@ const TitleSection = styled.div`
 const NavList = styled.ul`
   display: flex;
 
-  li {
-    margin-left: 50px;
-  }
-
   li a {
     font-size: 2rem;
+  }
+
+  @media (min-width: 900px) {
+    display: block;
+
+    li {
+      margin-left: 50px;
+    }
   }
 `
 

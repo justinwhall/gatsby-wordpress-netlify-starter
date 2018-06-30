@@ -61,7 +61,7 @@ If you update or publish a post with an environment checked, your post will be p
     <img src="https://gatsbynetliflydemo.justinwhall.com/wp-content/uploads/2018/06/Screenshot-2018-06-29-19.11.58_preview.png" alt="Logo" />
 </div>
 
-###  Features
+### Features
 
 * [WordPress plugin for Gatsby](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-wordpress)
 * Configured to work with WordPress Advanced Custom Fields
