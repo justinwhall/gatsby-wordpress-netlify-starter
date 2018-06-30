@@ -25,7 +25,7 @@ A starter skeleton that leverages the WordPress API for [Gatsby](https://github.
 5. Open your `gatsby-config.js` file and change the baseUrl to your WordPress url
 6. Run `yarn develop` -- _not_ `gatsby develop`
 
-#### Netlifly
+### Netlifly
 _Signup for a Netlifly account if you don't already have one._
 
 1. Create a new site
@@ -40,16 +40,16 @@ _Signup for a Netlifly account if you don't already have one._
 10. (Optional) Click "site options" and then "change site name". Rename to something that signifies this is the environment (stage or production).
 11. Repeat the process above a second time to create a production environment. Change the DEPLOY_ENV to lbn_deploy_production Optionally rename accordingly.
 
-#### Install WordPress
+### Install WordPress
 Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [https://gatsbynetliflydemo.justinwhall.com/](https://gatsbynetliflydemo.justinwhall.com/) for its data source. which is no more than a stripped down _s theme.
 
-#### Install LittleBot Netlifly plugin
+### Install LittleBot Netlifly plugin
 
 1. Download or clone the [LittleBot Netlifly plugin](https://github.com/justinwhall/littlebot-netlify) and install on your source WordPress site.
 2. Find your build hooks on Netlifly **Settings > Build & Deploy**
 3. Add build hooks to your WordPress install under **WP Admin > Settings > LittleBot Netlifly** 
 
-#### Publish!
+### Publish!
 
 Visit any post or page and you'll see that the default "Publish" metabox has been replaced with:
 
@@ -57,13 +57,11 @@ Visit any post or page and you'll see that the default "Publish" metabox has bee
 
 If you update or publish a post with an environment checked, your post will be published to that environment. Likewise, if you update/publish with an environment unchecked, A post will be removed from that environment. For example, if you uncheck both environments and update, the post will be removed from both. If you publish/update with both environments checked, the post will be published to both.
 
-## Features
-
 <div align="center">
     <img src="https://gatsbynetliflydemo.justinwhall.com/wp-content/uploads/2018/06/Screenshot-2018-06-29-19.11.58_preview.png" alt="Logo" />
 </div>
 
-### New Features
+###  Features
 
 * [WordPress plugin for Gatsby](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-wordpress)
 * Configured to work with WordPress Advanced Custom Fields
