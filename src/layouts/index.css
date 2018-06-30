@@ -149,6 +149,10 @@ ul {
 ul,
 ol {
   padding-left: 17px;
+}
+
+main ol,
+main ul {
   margin-bottom: 30px;
 }
 
