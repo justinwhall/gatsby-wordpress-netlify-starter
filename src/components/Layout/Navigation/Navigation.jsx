@@ -54,6 +54,7 @@ const NavigationContainer = styled.div`
 
   @media (max-width: 900px) {
     display: block;
+    padding: 20px 20px;
   }
 `
 
@@ -68,6 +69,12 @@ const TitleSection = styled.div`
 
   div {
     margin-right: 10px;
+  }
+
+  @media (max-width: 900px) {
+    h3 {
+      font-size: 14px;
+    }
   }
 `
 
