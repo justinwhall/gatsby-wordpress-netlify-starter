@@ -45,6 +45,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 slug
                 status
                 template
+                fields {
+                  deploy
+                }
               }
             }
           }
@@ -59,13 +62,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         // Create those pages with the wp_page.jsx template.
         const pageTemplate = path.resolve(`./src/templates/wp_page.jsx`)
         _.each(result.data.allWordpressPage.edges, edge => {
-          createPage({
-            path: `/${edge.node.slug}/`,
-            component: slash(pageTemplate),
-            context: {
-              id: edge.node.id
-            }
-          })
+          if (edge.node.fields.deploy) {
+            createPage({
+              path: `/${edge.node.slug}/`,
+              component: slash(pageTemplate),
+              context: {
+                id: edge.node.id
+              }
+            })
+          }
         })
       })
       // Now, querying all wordpressPosts
@@ -104,18 +109,21 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
           _.each(result.data.allWordpressPost.edges, edge => {
 
-            // grab all the tags and categories for later use
-            edge.node.categories.forEach(category => {
-              categories.push(category.name)
-            })
+            if (edge.node.fields.deploy) {
+              // grab all the tags and categories for later use
+              edge.node.categories.forEach(category => {
+                categories.push(category.name)
+              })
 
-            createPage({
-              path: `/${edge.node.slug}`,
-              component: slash(postTemplate),
-              context: {
-                id: edge.node.id,
-              }
-            })
+              createPage({
+                path: `/${edge.node.slug}`,
+                component: slash(postTemplate),
+                context: {
+                  id: edge.node.id,
+                }
+              })
+            }
+
           })
           // ==== END POSTS ====
 
