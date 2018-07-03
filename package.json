@@ -60,7 +60,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "DEPLOY_ENV=lbn_deploy_production gatsby develop",
+    "develop": "DEPLOY_ENV=lbn_published_production gatsby develop",
     "dev": "npm run develop",
     "serve": "gatsby serve",
     "build": "gatsby build",

@@ -33,12 +33,12 @@ _Signup for a Netlifly account if you don't already have one._
 3. Search and select your repository
 4. Click "show advanced"
 5. Click "new variable"
-6. Add a deploy key DEPLOY_ENV with a value of lbn_deploy_stage
+6. Add a deploy key DEPLOY_ENV with a value of lbn_published_stage
 7. Click "deploy site"
 8. Under Settings > Build & Deploy click "add build hook"
 9. Name something that signifies environment (stage or production)
 10. (Optional) Click "site options" and then "change site name". Rename to something that signifies this is the environment (stage or production).
-11. Repeat the process above a second time to create a production environment. Change the DEPLOY_ENV to lbn_deploy_production Optionally rename accordingly.
+11. Repeat the process above a second time to create a production environment. Change the DEPLOY_ENV to lbn_published_production Optionally rename accordingly.
 
 ### Install WordPress
 Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [https://gatsbynetliflydemo.justinwhall.com/](https://gatsbynetliflydemo.justinwhall.com/) for its data source. which is no more than a stripped down _s theme.
