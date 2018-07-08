@@ -13,7 +13,7 @@ class Index extends React.Component {
       <HomeContainer>
         <Helmet title={config.siteTitle} />
         <SEO postEdges={postEdges} />
-        <TopNavigation pages={this.props.data.allWordpressPage} />
+        <TopNavigation />
         <MainContentContainer>
           <h1>Gatsby + WordPress + Netlifly</h1>
           <p style={{ textAlign: 'center' }}>
@@ -91,15 +91,6 @@ export const pageQuery = graphql`
             name
           }
           content
-        }
-      }
-    }
-    allWordpressPage {
-      edges {
-        node {
-          slug
-          title
-          id
         }
       }
     }

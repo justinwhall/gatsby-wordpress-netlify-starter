@@ -13,7 +13,7 @@ export default class CategoryTemplate extends React.Component {
     return (
       <div className="tag-container">
         <Helmet title={`Posts tagged as "${category}" | ${config.siteTitle}`} />
-        <TopNavigation pages={this.props.data.allWordpressPage} />
+        <TopNavigation />
         <MainContentContainer>
           <h1>Category: {category}</h1>
           <PostListing postEdges={postEdges} />
@@ -74,15 +74,6 @@ query category($id: String) {
           name
         }
         content
-      }
-    }
-  }
-  allWordpressPage {
-    edges {
-      node {
-        slug
-        title
-        id
       }
     }
   }

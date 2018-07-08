@@ -5,20 +5,6 @@ import { siteTitle } from '../../../../data/SiteConfig'
 import Logo from '../../Accessories/Logo'
 
 class TopNavigation extends Component {
-  buildPageNodes() {
-    const { pages } = this.props
-    const pageNodes = []
-
-    pages.edges.forEach(page => {
-      pageNodes.push({
-        name: page.node.title,
-        pagePath: `/${page.node.slug}`,
-        id: page.node.id
-      })
-    })
-    return pageNodes
-  }
-
   render() {
     const links = this.buildPageNodes()
     return (
@@ -32,11 +18,9 @@ class TopNavigation extends Component {
           </Link>
         </TitleSection>
         <NavList>
-          {links.map(node => (
-            <li key={node.id}>
-              <a href={node.pagePath}>{node.name}</a>
+          <li>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.justinwhall.com/headless-wordpress-gatsby-netlifly-continous-deployment/">Get Started</a>
             </li>
-          ))}
         </NavList>
       </NavigationContainer>
     )

@@ -13,7 +13,7 @@ class wpPage extends Component {
 
     return (
       <div>
-        <TopNavigation pages={this.props.data.allWordpressPage} />
+        <TopNavigation />
         <MainContentContainer>
           <h1>{pageNode.title}</h1>
           <main>
@@ -57,15 +57,6 @@ export const pageQuery = graphql`
       title
       template
       content
-    }
-    allWordpressPage {
-      edges {
-        node {
-          slug
-          title
-          id
-        }
-      }
     }
   }
 `

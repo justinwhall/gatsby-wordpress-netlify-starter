@@ -26,7 +26,7 @@ export default class PostTemplate extends React.Component {
           <title>{`${postNode.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <TopNavigation pages={this.props.data.allWordpressPage} />
+        <TopNavigation />
         <PostContainer>
           <h1>{postNode.title} </h1>
           <MetaSection>
@@ -105,15 +105,6 @@ export const pageQuery = graphql`
         name
       }
       content
-    }
-    allWordpressPage {
-      edges {
-        node {
-          slug
-          title
-          id
-        }
-      }
     }
   }
 `
