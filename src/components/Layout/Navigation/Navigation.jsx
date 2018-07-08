@@ -6,7 +6,6 @@ import Logo from '../../Accessories/Logo'
 
 class TopNavigation extends Component {
   render() {
-    const links = this.buildPageNodes()
     return (
       <NavigationContainer>
         <TitleSection>
@@ -19,8 +18,8 @@ class TopNavigation extends Component {
         </TitleSection>
         <NavList>
           <li>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.justinwhall.com/headless-wordpress-gatsby-netlifly-continous-deployment/">Get Started</a>
-            </li>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.justinwhall.com/headless-wordpress-gatsby-netlifly-continous-deployment/">Get Started</a>
+          </li>
         </NavList>
       </NavigationContainer>
     )
