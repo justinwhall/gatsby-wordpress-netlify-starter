@@ -2,31 +2,31 @@
     <img src="static/logos/logo-1024.png" alt="Logo" width='100px' height='100px'/>
 </div>
 
-# Gatsby + Headless WordPress + Netlifly Starter
+# Gatsby + Headless WordPress + Netlify Starter
 
-A starter skeleton that leverages the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlifly. Publishing posts call the Netlifly build hook. Deploy to Netlifly stage or production enviroment when updating a WordPress post or page.
+A starter skeleton that leverages the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlify. Publishing posts call the Netlify build hook. Deploy to Netlify stage or production enviroment when updating a WordPress post or page.
 
 ## Dependencies
 
-* [LittleBot Netlifly](https://github.com/justinwhall/littlebot-netlify) installed and activated on the source WordPress installation.
+* [LittleBot Netlify](https://github.com/justinwhall/littlebot-netlify) installed and activated on the source WordPress installation.
 
 #### This Project was forked from [Gatsby WordPress Starter](https://github.com/ericwindmill/gatsby-starter-wordpress)
 
 #### Which was forked from [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter)
 
-### [Production Demo](https://gatsby-wordpress-netlifly-production.netlify.com/)
-### [Stage Demo](https://gatsby-wordpress-netlifly-stage.netlify.com/)
+### [Production Demo](https://gatsby-wordpress-netlify-production.netlify.com/)
+### [Stage Demo](https://gatsby-wordpress-netlify-stage.netlify.com/)
 
 ## Getting Started
-1. Fork Gatsby WordPress Netlifly
+1. Fork Gatsby WordPress Netlify
 2. Clone your forked repository
 3. `npm install --global gatsby-cli` (if you don't have Gatsby CLI installed)
 4. In the root of your project yarn install
 5. Open your `gatsby-config.js` file and change the baseUrl to your WordPress url
 6. Run `yarn develop` -- _not_ `gatsby develop`
 
-### Netlifly
-_Signup for a Netlifly account if you don't already have one._
+### Netlify
+_Signup for a Netlify account if you don't already have one._
 
 1. Create a new site
 2. Select "GitHub" from "Continuous Deployment"
@@ -41,13 +41,13 @@ _Signup for a Netlifly account if you don't already have one._
 11. Repeat the process above a second time to create a production environment. Change the DEPLOY_ENV to lbn_published_production Optionally rename accordingly.
 
 ### Install WordPress
-Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [https://gatsbynetliflydemo.justinwhall.com/](https://gatsbynetliflydemo.justinwhall.com/) for its data source. which is no more than a stripped down _s theme.
+Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [https://gatsbynetlifydemo.justinwhall.com/](https://gatsbynetlifydemo.justinwhall.com/) for its data source. which is no more than a stripped down _s theme.
 
-### Install LittleBot Netlifly plugin
+### Install LittleBot Netlify plugin
 
-1. Download or clone the [LittleBot Netlifly plugin](https://github.com/justinwhall/littlebot-netlify) and install on your source WordPress site.
-2. Find your build hooks on Netlifly **Settings > Build & Deploy**
-3. Add build hooks to your WordPress install under **WP Admin > Settings > LittleBot Netlifly** 
+1. Download or clone the [LittleBot Netlify plugin](https://github.com/justinwhall/littlebot-netlify) and install on your source WordPress site.
+2. Find your build hooks on Netlify **Settings > Build & Deploy**
+3. Add build hooks to your WordPress install under **WP Admin > Settings > LittleBot Netlify** 
 
 ### Publish!
 
