@@ -7,7 +7,6 @@ import PostListing from '../components/Posts/PostListing/PostListing'
 
 export default class CategoryTemplate extends React.Component {
   render() {
-    console.log(this)
     const category = this.props.pathContext.id
     const postEdges = this.props.data.allWordpressPost.edges
     return (
