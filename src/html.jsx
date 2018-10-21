@@ -15,8 +15,6 @@ if (process.env.NODE_ENV === "production") {
   }
 }
 
-const bodyClass = process.env.DEPLOY_ENV === 'lbn_published_production' ? 'lbn-prod' : 'lbn-stage';
-
 
 export default class HTML extends React.Component {
   render() {
@@ -41,7 +39,7 @@ export default class HTML extends React.Component {
           <link rel="shortcut icon" href={favicon} />
           {css}
         </head>
-        <body className={bodyClass}>
+        <body>
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}

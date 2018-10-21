@@ -4,7 +4,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 const webpackLodashPlugin = require('lodash-webpack-plugin')
 
-const { DEPLOY_ENV } = process.env;
+const { DEPLOY_ENV } = process.env || 'lbn_published_production';
 /**
  * Generate node edges
  *
