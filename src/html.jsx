@@ -10,10 +10,13 @@ if (process.env.NODE_ENV === "production") {
     /* eslint import/no-webpack-loader-syntax: off */
     inlinedStyles = require("!raw-loader!../public/styles.css");
   } catch (e) {
-    /* eslint no-console: "off"*/
+    /* eslint no-console: "off" */
     console.log(e);
   }
 }
+
+const bodyClass = process.env.DEPLOY_ENV === 'lbn_published_production' ? 'lbn-prod' : 'lbn-stage';
+
 
 export default class HTML extends React.Component {
   render() {
@@ -38,7 +41,7 @@ export default class HTML extends React.Component {
           <link rel="shortcut icon" href={favicon} />
           {css}
         </head>
-        <body>
+        <body className={bodyClass}>
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
