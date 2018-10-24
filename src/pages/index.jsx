@@ -22,7 +22,7 @@ class Index extends React.Component {
               style={{ fontSize: '1.6rem' }}
               href="https://www.justinwhall.com"
             >
-            Justin W. Hall
+            Justin W. Hall :)
             </a>.
             {' '}You should follow him on{' '}
             <a
