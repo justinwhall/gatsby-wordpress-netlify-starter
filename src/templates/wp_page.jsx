@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Layout from "../components/Layout/layout"
 import TopNavigation from '../components/Layout/Navigation/Navigation'
 
 class wpPage extends Component {
@@ -12,7 +13,7 @@ class wpPage extends Component {
     }
 
     return (
-      <div>
+      <Layout location={props.location}>
         <TopNavigation />
         <MainContentContainer>
           <h1>{pageNode.title}</h1>
@@ -20,7 +21,7 @@ class wpPage extends Component {
             <div dangerouslySetInnerHTML={{ __html: pageNode.content }} />
           </main>
         </MainContentContainer>
-      </div>
+      </Layout>
     )
   }
 }

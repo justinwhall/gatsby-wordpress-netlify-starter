@@ -1,6 +1,8 @@
 import React from 'react'
+import { graphql } from "gatsby"
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
+import Layout from '../components/Layout/layout'
 import PostListing from '../components/Posts/PostListing/PostListing'
 import SEO from '../components/Accessories/SEO/SEO'
 import config from '../../data/SiteConfig'
@@ -10,32 +12,34 @@ class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allWordpressPost.edges
     return (
-      <HomeContainer>
-        <Helmet title={config.siteTitle} />
-        <SEO postEdges={postEdges} />
-        <TopNavigation />
-        <MainContentContainer>
-          <h1>Gatsby + WordPress + Netlifly</h1>
-          <p style={{ textAlign: 'center' }}>
-            Created by{' '}
-            <a
-              style={{ fontSize: '1.6rem' }}
-              href="https://www.justinwhall.com"
-            >
-            Justin W. Hall :)
-            </a>.
-            {' '}You should follow him on{' '}
-            <a
-              style={{ fontSize: '1.6rem' }}
-              href="https://twitter.com/justinwhall"
-            >
-              Twitter.
-            </a>
-          </p>
-          <Divider />
-          <PostListing postEdges={postEdges} />
-        </MainContentContainer>
-      </HomeContainer>
+      <Layout location={this.props.location}>
+        <HomeContainer>
+          <Helmet title={config.siteTitle} />
+          <SEO postEdges={postEdges} />
+          <TopNavigation />
+          <MainContentContainer>
+            <h1>Gatsby + WordPress + Netlifly</h1>
+            <p style={{ textAlign: 'center' }}>
+              Created by{' '}
+              <a
+                style={{ fontSize: '1.6rem' }}
+                href="https://www.justinwhall.com"
+              >
+              Justin W. Hall :)
+              </a>.
+              {' '}You should follow him on{' '}
+              <a
+                style={{ fontSize: '1.6rem' }}
+                href="https://twitter.com/justinwhall"
+              >
+                Twitter.
+              </a>
+            </p>
+            <Divider />
+            <PostListing postEdges={postEdges} />
+          </MainContentContainer>
+        </HomeContainer>
+      </Layout>
     )
   }
 }

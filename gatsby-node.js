@@ -10,10 +10,10 @@ const DEPLOY_ENV  = process.env.DEPLOY_ENV || 'lbn_published_production';
 /**
  * Generate node edges
  *
- * @param {any} { node, boundActionCreators, getNode }
+ * @param {any} { node, actions, getNode }
  */
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
 
   if (!Object.prototype.hasOwnProperty.call(node, 'meta')) {
     return;
@@ -33,8 +33,8 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
 // Will create pages for Wordpress pages (route : /{slug})
 // Will create pages for Wordpress posts (route : /{slug})
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   return new Promise((resolve, reject) => {
     // First, query all the pages on your WordPress
     graphql(
@@ -154,8 +154,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   })
 }
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === 'build-javascript') {
-    config.plugin('Lodash', webpackLodashPlugin, null)
+    actions.setWebpackConfig({
+      plugins: [webpackLodashPlugin],
+    })
   }
 }

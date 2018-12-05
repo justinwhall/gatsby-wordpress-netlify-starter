@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql, Link } from "gatsby"
 import styled from 'styled-components'
-import Link from 'gatsby-link'
+import Layout from "../components/Layout/layout"
 import UserInfo from '../components/Accessories/UserInfo/UserInfo'
 import Disqus from '../components/Accessories/Disqus/Disqus'
 import PostTags from '../components/Posts/PostTags/PostTags'
@@ -12,7 +13,7 @@ import TopNavigation from '../components/Layout/Navigation/Navigation'
 
 export default class PostTemplate extends React.Component {
   render() {
-    const { slug } = this.props.pathContext
+    const { slug } = this.props.pageContext
     const postNode = this.props.data.wordpressPost
     if (!postNode.id) {
       postNode.id = slug
@@ -21,7 +22,7 @@ export default class PostTemplate extends React.Component {
       postNode.category_id = config.postDefaultCategoryID
     }
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Helmet>
           <title>{`${postNode.title} | ${config.siteTitle}`}</title>
         </Helmet>
@@ -53,7 +54,7 @@ export default class PostTemplate extends React.Component {
           <UserInfo config={config} />
           <Disqus postNode={postNode} />
         </PostContainer>
-      </div>
+      </Layout>
     )
   }
 }

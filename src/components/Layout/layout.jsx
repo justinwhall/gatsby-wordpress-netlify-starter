@@ -1,9 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
-import config from "../../data/SiteConfig";
+import config from "../../../data/SiteConfig";
 import "./index.css";
 
-export default class MainLayout extends React.Component {
+export default class Layout extends React.Component {
   getLocalTitle() {
     function capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
@@ -38,15 +38,16 @@ export default class MainLayout extends React.Component {
     }
     return title;
   }
+
   render() {
     const { children } = this.props;
     return (
-      <div>
+      <div className="content-wrapper">
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        {children()}
+        {children}
       </div>
     );
   }
