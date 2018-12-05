@@ -5,15 +5,16 @@ import TopNavigation from '../components/Layout/Navigation/Navigation'
 
 class wpPage extends Component {
   render() {
+    const { location, data} = this.props
     const pageNode = {
-      title: this.props.data.wordpressPage.title,
-      content: this.props.data.wordpressPage.content,
-      id: this.props.data.wordpressPage.id,
-      slug: this.props.data.wordpressPage.slug
+      title: data.wordpressPage.title,
+      content: data.wordpressPage.content,
+      id: data.wordpressPage.id,
+      slug: data.wordpressPage.slug
     }
 
     return (
-      <Layout location={props.location}>
+      <Layout location={location}>
         <TopNavigation />
         <MainContentContainer>
           <h1>{pageNode.title}</h1>
