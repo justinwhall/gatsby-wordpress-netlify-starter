@@ -1,11 +1,24 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
+  "name": "gatsby-wordpress-netlify-starter",
   "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "version": "2.0.0",
+  "author": "Justin W Hall",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:justinwhall/gatsby-wordpress-netlify-starter.git"
+  },
+  "scripts": {
+    "develop": "DEPLOY_ENV=lbn_published_production gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "gatsby": "^2.8.5",
@@ -52,23 +65,5 @@
     "stylefmt": "^6.0.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0"
-  },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }

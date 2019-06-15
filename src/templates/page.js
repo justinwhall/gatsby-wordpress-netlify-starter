@@ -8,11 +8,11 @@ import { rhythm } from "../utils/typography"
 
 const PageTemplate = (props) => {
 
-  const post = this.props.data.wordpressPage;
-  const siteTitle = this.props.data.site.siteMetadata.title;
+  const post = props.data.wordpressPage;
+  const siteTitle = props.data.site.siteMetadata.title;
 
   return (
-    <Layout location={this.props.location} title={siteTitle}>
+    <Layout location={props.location} title={siteTitle}>
       <SEO
         title={post.title}
         description={post.excerpt}
