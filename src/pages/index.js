@@ -52,12 +52,7 @@ export const pageQuery = graphql`
         postPrefix
       }
     }
-    allWordpressPost(
-#        filter: {
-#          fields: {
-#            deploy: {eq: true}
-#          }
-#        }
+    allWordpressPost(filter: {fields: {deploy: {eq: true}}}) {
         limit: 100
       ) {
       edges {
