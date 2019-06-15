@@ -1,97 +1,133 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
   </a>
 </p>
-<h1 align="center">
-  Gatsby's blog starter
-</h1>
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+# Gatsby + Headless WordPress + Netlify Starter
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+A starter skeleton that leverages the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlify. Publishing posts call the Netlify build hook. Deploy to Netlify stage or production enviroment when updating a WordPress post or page.
 
-## 🚀 Quick start
+## Dependencies
 
-1.  **Create a Gatsby site.**
+* [LittleBot Netlify](https://github.com/justinwhall/littlebot-netlify) installed and activated on the source WordPress installation.
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+#### This Project was forked from the default [Gatsby Starter](https://github.com/gatsbyjs/gatsby-starter-blog)
 
-    ```sh
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
-    ```
 
-1.  **Start developing.**
+### [Production Demo](https://gatsby-wordpress-netlify-production.netlify.com/)
+### [Stage Demo](https://gatsby-wordpress-netlify-stage.netlify.com/)
 
-    Navigate into your new site’s directory and start it up.
+## Getting Started
+1. Fork Gatsby WordPress Netlify
+2. Clone your forked repository
+3. `npm install --global gatsby-cli` (if you don't have Gatsby CLI installed)
+4. In the root of your project yarn install
+5. Open your `gatsby-config.js` file and change the baseUrl to your WordPress url
+6. Run `yarn develop` -- _not_ `gatsby develop`
 
-    ```sh
-    cd my-blog-starter/
-    gatsby develop
-    ```
+### Netlify
+_Signup for a Netlify account if you don't already have one._
 
-1.  **Open the source code and start editing!**
+1. Create a new site
+2. Select "GitHub" from "Continuous Deployment"
+3. Search and select your repository
+4. Click "show advanced"
+5. Click "new variable"
+6. Add a deploy key DEPLOY_ENV with a value of lbn_published_stage
+7. Click "deploy site"
+8. Under Settings > Build & Deploy click "add build hook"
+9. Name something that signifies environment (stage or production)
+10. (Optional) Click "site options" and then "change site name". Rename to something that signifies this is the environment (stage or production).
+11. (Optional) Repeat the process above a second time to create a production environment. Change the DEPLOY_ENV to lbn_published_production Optionally rename accordingly.
 
-    Your site is now running at `http://localhost:8000`!
+### Install WordPress
+Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [https://gatsbynetlifydemo.justinwhall.com/](https://gatsbynetlifydemo.justinwhall.com/) for its data source. which is no more than a stripped down _s theme.
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+### Install LittleBot Netlify plugin (Optional. Can be used without this if you don't care about building on publish.)
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+1. Download or clone the [LittleBot Netlify plugin](https://github.com/justinwhall/littlebot-netlify) and install on your source WordPress site.
+2. Find your build hooks on Netlify **Settings > Build & Deploy**
+3. Add build hooks to your WordPress install under **WP Admin > Settings > LittleBot Netlify** 
 
-## 🧐 What's inside?
+### Publish!
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+Support for Gutenberg out of the box. If you are using the classic editor, the default "Publish" metabox has been replaced with:
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+<img src="https://gatsbynetliflydemo.justinwhall.com/wp-content/uploads/2018/06/Screenshot-2018-06-29-18.50.37_preview-300x180.png" alt="publish"  />
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+If you update or publish a post with an environment checked, your post will be published to that environment. Likewise, if you update/publish with an environment unchecked, A post will be removed from that environment. For example, if you uncheck both environments and update, the post will be removed from both. If you publish/update with both environments checked, the post will be published to both.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+### Example:
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+Using this starter requires configuring the gatsby-config.js file. You really only need to change BaseUrl, and hostingWPCOM if you're using WP.com rather than WP.org
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+```javascript
+{
+  resolve: 'gatsby-source-wordpress',
+  options: {
+    // The base url to your WP site.
+    baseUrl: 'YOUR_WORDPRESS_URL',
+    // WP.com sites set to true, WP.org set to false
+    hostingWPCOM: false,
+    // The protocol. This can be http or https.
+    protocol: 'http',
+    // Use 'Advanced Custom Fields' Wordpress plugin
+    useACF: true,
+    auth: {},
+    // Set to true to debug endpoints on 'gatsby build'
+    verboseOutput: false
+  }
+},
+```
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+* Update GraphQL queries to match your WordPress Content. This is the query currently on the index page. You either need to add ACF's in your WordPress to match the query (in this case Project and Date), or you need to remove those aspects of the query. The featured_media isn't a problem -- it'll work even if you have posts without featured images.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+```javascript
+allWordpressPost {
+      edges {
+        node {
+          featured_media {
+            source_url
+          }
+          author {
+            name
+            avatar_urls {
+              wordpress_24
+              wordpress_48
+              wordpress_96
+            }
+          }
+          date
+          slug
+          title
+          modified
+          excerpt
+          id
+          acf {
+            project
+            date
+          }
+          categories {
+            name
+          }
+          tags {
+            name
+          }
+          content
+        }
+      }
+    }
+```
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+* Finally, you'll probably want to update the SiteConfig to match your info, because right now it has mine. 🤠
+* Suggestions:
+  * Use the Prism WP Plugin to pass code blocks down.
+  * If you give an ACF to a single post, you must give it to EVERY post, or GraphQL gets confused.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+### Notes
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+[Ruben Harutyunyan](https://github.com/Vagr9K) did most of the hard work with [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter).
+The rest of the credit is due to [Gatsby](https://github.com/gatsbyjs/gatsby/).
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+WARNING: Make sure to edit `static/robots.txt` to include your domain for the sitemap!
