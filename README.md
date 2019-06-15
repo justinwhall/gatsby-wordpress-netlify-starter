@@ -121,13 +121,4 @@ allWordpressPost {
 ```
 
 * Finally, you'll probably want to update the SiteConfig to match your info, because right now it has mine. 🤠
-* Suggestions:
-  * Use the Prism WP Plugin to pass code blocks down.
-  * If you give an ACF to a single post, you must give it to EVERY post, or GraphQL gets confused.
 
-### Notes
-
-[Ruben Harutyunyan](https://github.com/Vagr9K) did most of the hard work with [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter).
-The rest of the credit is due to [Gatsby](https://github.com/gatsbyjs/gatsby/).
-
-WARNING: Make sure to edit `static/robots.txt` to include your domain for the sitemap!
