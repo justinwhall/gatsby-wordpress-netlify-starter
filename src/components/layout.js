@@ -98,7 +98,7 @@ const Layout = (props) => {
           }}
           ></iframe>
           <a
-          href="https://justinwhall.com"
+          href="https://justinwhall.com/headless-wordpress-gatsby-netlify-continous-deployment/"
           style={{
             position: 'absolute',
             left: 150,
