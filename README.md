@@ -4,6 +4,9 @@
   </a>
 </p>
 
+### 👋 Looking for a way to support live previews with Gatsby + WordPress?
+[Check this repo out](https://github.com/justinwhall/wordpress-gatsby-preview-starter)!
+
 # Gatsby + Headless WordPress + Netlify Starter
 
 A starter skeleton that leverages the WordPress API for [Gatsby](https://github.com/gatsbyjs/gatsby/). Support for Continuous integration with Netlify. Publishing posts call the Netlify build hook. Deploy to Netlify stage or production enviroment when updating a WordPress post or page.
