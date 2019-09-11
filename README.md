@@ -13,7 +13,7 @@ A starter skeleton that leverages the WordPress API for [Gatsby](https://github.
 
 ## Dependencies
 
-* [LittleBot Netlify](https://github.com/justinwhall/littlebot-netlify) installed and activated on the source WordPress installation.
+* [WP Buildhook Deploy](https://github.com/justinwhall/littlebot-netlify) installed and activated on the source WordPress installation.
 
 #### This Project was forked from the default [Gatsby Starter](https://github.com/gatsbyjs/gatsby-starter-blog)
 
@@ -45,13 +45,13 @@ _Signup for a Netlify account if you don't already have one._
 11. (Optional) Repeat the process above a second time to create a production environment. Change the DEPLOY_ENV to lbn_published_production Optionally rename accordingly.
 
 ### Install WordPress
-Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [https://gatsbynetlifydemo.justinwhall.com/](https://gatsbynetlifydemo.justinwhall.com/) for its data source. which is no more than a stripped down _s theme.
+Install WordPress on the server of your choice or use an existing site. I recommend a stripped down theme with no front end like this. For example, this site uses [http://gatsbynetliflydemo.justinwhall.com/wp-json/](http://gatsbynetliflydemo.justinwhall.com/wp-json/) for its data source. which is no more than a stripped down _s theme.
 
-### Install LittleBot Netlify plugin (Optional. Can be used without this if you don't care about building on publish.)
+### Install WP Buildhook Deploy plugin (Optional. Can be used without this if you don't care about building on publish.)
 
-1. Download or clone the [LittleBot Netlify plugin](https://github.com/justinwhall/littlebot-netlify) and install on your source WordPress site.
+1. Download or clone the [WP Buildhook Deploy plugin](https://github.com/justinwhall/littlebot-netlify) and install on your source WordPress site.
 2. Find your build hooks on Netlify **Settings > Build & Deploy**
-3. Add build hooks to your WordPress install under **WP Admin > Settings > LittleBot Netlify** 
+3. Add build hooks to your WordPress install under **WP Admin > Settings > WP BuildHook Deploy** 
 
 ### Publish!
 
