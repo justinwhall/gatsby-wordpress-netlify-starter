@@ -40,7 +40,7 @@
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
     "lodash": "^4.17.11",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.23.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
