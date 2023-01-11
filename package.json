@@ -37,7 +37,7 @@
     "gatsby-remark-smartypants": "^2.0.9",
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-source-wordpress": "^3.0.64",
-    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.1.21",
     "lodash": "^4.17.11",
     "prismjs": "^1.16.0",
